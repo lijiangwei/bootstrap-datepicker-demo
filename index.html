@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap-datepicker</title>
+	<link href="https://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker.css" rel="stylesheet">
+
+</head>
+<body>
+	
+	<input type="text" class="datepicker" data-date-format="yyyy-mm-dd" readonly="readonly">
+
+	<div class="input-append">
+	  	<input class="datepicker" id="appendedInput" type="text">
+	  	<span class="add-on"><i class="icon-calendar"></i></span>
+	</div>
+
+	<div class="input-append input-prepend">
+	  	<input class="datepicker" type="text">
+	  	<span class="add-on">to</span>
+	  	<input class="datepicker" type="text">
+	</div>
+
+	<div id="event_period">
+	    <input type="text" class="actual_range">
+	    <input type="text" class="actual_range">
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-datepicker.zh-CN.min.js"></script>
+
+	<script>
+
+		$(".datepicker").datepicker({
+			autoclose: true, 	//选择日期后是否自动关闭
+			calendarWeeks: false,	//是否显示第几周
+			datesDisabled: "2018-06-01",
+			startDate: '2018-06-03',
+			endDate: '2018-06-10',
+			format: "yyyy-mm-dd",
+			language: 'zh-CN'
+		});
+
+		$('#event_period').datepicker({
+		    inputs: $('.actual_range'),
+		    format: "yyyy-mm-dd",
+		    language: 'zh-CN'
+		});
+	</script>
+</body>
+</html>
